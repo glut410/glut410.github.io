@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>Categories - glut410</title>
+  <title>glut410</title>
   
     <link rel="shortcut icon" href="/favicon.png">
   
@@ -66,15 +66,7 @@
   
   
   
-<link rel="stylesheet" href="/css/archive.css">
-
   
-  
-  
-  
-  
-<link rel="stylesheet" href="/css/categories.css">
-
   
 
   
@@ -138,16 +130,88 @@
     </div>
 </nav>
         
-    <div class="container">
+<article class="post">
     <div class="meta">
-        <h2 class="title">Categories</h2>
-    </div>
-    <div class="divider"></div>
-    <div class="categories">
         
-        <a href="/categories/算法/" class="category">算法</a><a href="/categories/Minecraft/" class="category">Minecraft</a><a href="/categories/物理/" class="category">物理</a>
+
+        
+        <div class="date" id="date">
+            <span>August</span>
+            <span>30,</span>
+            <span>2022</span>
+        </div>
+        
+
+        <h2 class="title"></h2>
     </div>
-</div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="编译原理"><a class="markdownIt-Anchor" href="#编译原理"></a> 编译原理</h1>
+<h2 id="编译系统主要结构"><a class="markdownIt-Anchor" href="#编译系统主要结构"></a> 编译系统主要结构</h2>
+<h3 id="分析流程"><a class="markdownIt-Anchor" href="#分析流程"></a> 分析流程</h3>
+<p>词法分析（相当于分析句子中各个词的词性）$$\rightarrow$$ 语法分析（相当于获取单词构成的各个部分的结构）$$\rightarrow$$ 语义分析（获取句子表达的意思）。</p>
+<h3 id="编译器结构"><a class="markdownIt-Anchor" href="#编译器结构"></a> 编译器结构</h3>
+<ul>
+<li>Frontend</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 字符流</span><br><span class="line">cf=&gt;operation: 词法分析器</span><br><span class="line">tk=&gt;operation: tokens</span><br><span class="line">yf=&gt;operation: 语法分析器</span><br><span class="line">yy=&gt;operation: 语义分析器</span><br><span class="line">st-&gt;cf-&gt;tk-&gt;yf-&gt;yy</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Backend</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=&gt;operation: 目标代码生成器</span><br><span class="line">b=&gt;operation: 机器相关代码优化器</span><br><span class="line"></span><br><span class="line">a-&gt;b</span><br></pre></td></tr></table></figure>
+<h2 id="词法分析"><a class="markdownIt-Anchor" href="#词法分析"></a> 词法分析</h2>
+<h3 id="主要任务"><a class="markdownIt-Anchor" href="#主要任务"></a> 主要任务</h3>
+<ul>
+<li>扫描单词，确定单词类型。</li>
+<li>将单词转化为tokens。</li>
+</ul>
+<h3 id="计算机中的单词类型"><a class="markdownIt-Anchor" href="#计算机中的单词类型"></a> 计算机中的单词类型</h3>
+<ul>
+<li>
+<p>关键字 Keyword</p>
+<p>例如：if、else、for、u8（如果你不知道什么是u8，这明显地触怒了Saint He）…</p>
+<p><strong>关于什么是u8，这我得好好说道说道。首先呢，“u”和“v”很像，所以是v8，请关注嘉然今天吃什么，关注<a target="_blank" rel="noopener" href="https://space.bilibili.com/672328094">嘉然</a>，顿顿解馋~关注<a target="_blank" rel="noopener" href="https://space.bilibili.com/1265680561">永雏塔菲</a>喵，关注永雏塔菲谢谢喵</strong></p>
+</li>
+<li>
+<p>标识符 Identifier</p>
+<p>例如：变量名、方法名…</p>
+</li>
+<li>
+<p>常量 Const</p>
+<p>例如：114514.19180，true</p>
+</li>
+<li>
+<p>运算符 Operator</p>
+<p>例如：+、-、*、/、++、&gt;、&lt;、|（在著名的Helang编程语言中，这不仅仅只是或运算。这个运算符的发明，大大提高了开发效率，是划时代的里程碑）</p>
+</li>
+<li>
+<p>界限符 Delimiter</p>
+<p>例如：; ( ) = { } …</p>
+</li>
+</ul>
+<h3 id="token"><a class="markdownIt-Anchor" href="#token"></a> Token</h3>
+<p>根据单词类型，给每个单词分配一个token，从而得到token序列，例如：</p>
+<p><img src=".%5C%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%5C01.png" alt="" /></p>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            
+            <p>This post is written by glut410, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+    </div>
+
+    
+        
+        
+        <script src="https://giscus.app/client.js" data-repo="glut410/glut410.github.io" data-repo-id="R_kgDOH2uxDA" data-category="Announcements" data-category-id="DIC_kwDOH2uxDM4CQ9qo" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async> </script>
+        
+    
+</article>
 
         <footer>
     <div class="inner">

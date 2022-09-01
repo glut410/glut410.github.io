@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>物理动态平衡总结 - glut410</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/giscus.css">
+
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+    <body
+        data-color-scheme="light"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">Categories</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/glut410" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/物理/">物理</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>August</span>
+            <span>25,</span>
+            <span>2022</span>
+        </div>
+        
+
+        <h2 class="title">物理动态平衡总结</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <p><strong>该内容参照<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15u411k7kU">【十分钟】搞清楚 所有 动态平衡 解题方法</a>，以下只是本人的整理和理解</strong></p>
+<p>动态平衡即合力为0，因此要达到动态平衡有多种方法。以下是分类分析各种动态平衡情形。</p>
+<p>以下各种你在书本上没见过的名词，都是为了定性而自造出来的词，例如大变力、小变力等，目的是为了方便区分并理解。</p>
+<h2 id="三力平衡"><a class="markdownIt-Anchor" href="#三力平衡"></a> 三力平衡</h2>
+<h3 id="一力变向"><a class="markdownIt-Anchor" href="#一力变向"></a> 一力变向</h3>
+<ul>
+<li>
+<p>大小变力解题法</p>
+<ol>
+<li>
+<p>选取研究对象，进行受力分析</p>
+</li>
+<li>
+<p>确定大变力、小变力、不变力</p>
+<p>大变力：方向、大小可能变化的力</p>
+<p>小变力：方向不变、大小可能变化的力</p>
+<p>不变力：顾名思义</p>
+</li>
+<li>
+<p>固定不变力、反延小变力、平移大变力</p>
+<p>目的：构建矢量三角形</p>
+</li>
+<li>
+<p>旋转大变力</p>
+<p>因为合力为零，所以三个力始终要构成封闭三角形。又因为不变力不变，小变力方向不变，所以可以推出三角形的变化趋势</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="二力变向"><a class="markdownIt-Anchor" href="#二力变向"></a> 二力变向</h3>
+<h4 id="二力同角度变"><a class="markdownIt-Anchor" href="#二力同角度变"></a> 二力同角度变</h4>
+<ul>
+<li>
+<p>拉密定理解题法（定量分析时方便）</p>
+<p>拉密定理：(其实就是正弦定理)</p>
+<p><img src="%E7%89%A9%E7%90%86%E5%8A%A8%E6%80%81%E5%B9%B3%E8%A1%A1%E6%80%BB%E7%BB%93/lami.png" alt="" /></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>若</mtext><msub><mi>F</mi><mi>a</mi></msub><mo separator="true">,</mo><msub><mi>F</mi><mi>b</mi></msub><mo separator="true">,</mo><msub><mi>F</mi><mi>c</mi></msub><mtext>合力为零，则：</mtext><mfrac><msub><mi>F</mi><mi>a</mi></msub><mrow><mi>sin</mi><mo>⁡</mo><mi>a</mi></mrow></mfrac><mo>=</mo><mfrac><msub><mi>F</mi><mi>b</mi></msub><mrow><mi>sin</mi><mo>⁡</mo><mi>b</mi></mrow></mfrac><mo>=</mo><mfrac><msub><mi>F</mi><mi>c</mi></msub><mrow><mi>sin</mi><mo>⁡</mo><mi>c</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">若F_a, F_b, F_c合力为零，则：\cfrac{F_a}{\sin{a}} = \cfrac{F_b}{\sin{b}} = \cfrac{F_c}{\sin{c}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.276em;vertical-align:-0.686em;"></span><span class="mord cjk_fallback">若</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">合</span><span class="mord cjk_fallback">力</span><span class="mord cjk_fallback">为</span><span class="mord cjk_fallback">零</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">则</span><span class="mord cjk_fallback">：</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5899999999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.74em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.276em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5899999999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">b</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.74em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.276em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5899999999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.74em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span></span></span></span></span></span></span></p>
+<ol>
+<li>选取研究对象，进行受力分析</li>
+<li>标出各个角度以便区分</li>
+<li>列出拉密定理的等式</li>
+<li>根据已知变化趋势的物理量推导未知</li>
+</ol>
+</li>
+<li>
+<p>辅助圆解题法（定性分析时方便）</p>
+<p>我们在初中就学过，同弧或等弧所对的圆周角相等。</p>
+<p><img src="./%E7%89%A9%E7%90%86%E5%8A%A8%E6%80%81%E5%B9%B3%E8%A1%A1%E6%80%BB%E7%BB%93/circ.png" alt="" /></p>
+<p>不难发现，其中一条弦固定不变，另外两条弦长短、方向都发生变化。因此我们定义：变力和不变力。</p>
+<p>变力：方向大小都发生变化的力</p>
+<p>不变力：顾名思义</p>
+<ol>
+<li>选取研究对象，进行受力分析</li>
+<li>确定变力与不变力</li>
+<li>固定不变力，将三个力平移成首尾相接的三角形。</li>
+<li>放入辅助圆中，进行定性分析</li>
+</ol>
+</li>
+</ul>
+<h4 id="二力非同角度变"><a class="markdownIt-Anchor" href="#二力非同角度变"></a> 二力非同角度变</h4>
+<ul>
+<li>相似三角形解题法</li>
+</ul>
+<h2 id="多力平衡"><a class="markdownIt-Anchor" href="#多力平衡"></a> 多力平衡</h2>
+<ul>
+<li>正交分解</li>
+</ul>
+<h3 id="多研究对象"><a class="markdownIt-Anchor" href="#多研究对象"></a> 多研究对象</h3>
+<ul>
+<li>整体隔离法</li>
+</ul>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            
+            <p>This post is written by glut410, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+    </div>
+
+    
+        
+        
+        <script src="https://giscus.app/client.js" data-repo="glut410/glut410.github.io" data-repo-id="R_kgDOH2uxDA" data-category="Announcements" data-category-id="DIC_kwDOH2uxDM4CQ9qo" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async> </script>
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/about" class="item">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/glut410/cotack" class="item">cotack</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/glut410/vscode-helang" class="item">vscode-helang</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/glut410" class="item">GitHub</a>
+                
+                <a href="mailto:glut410@outlook.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2022 glut410<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
